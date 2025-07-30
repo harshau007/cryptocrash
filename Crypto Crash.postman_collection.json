@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "f4a6f9e8-f613-4e6d-b237-9f58acfcbf09",
+		"name": "Crypto Crash",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20844025"
+	},
+	"item": [
+		{
+			"name": "Get wallet",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Place a bet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerName\": \"demo\",\n    \"usdAmount\": 50,\n    \"cryptocurrency\": \"BTC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/bet",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"bet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cash out",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerName\": \"demo\",\n    \"betId\": \"2d8e0611-988e-4d79-a810-4811f8d44c9f\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/cashout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"cashout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/transactions/demo?page=1&limit=10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"transactions",
+						"demo"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current crypto prices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/game/state",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"game",
+						"state"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Game history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/game/history?page=1&limit=5",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"game",
+						"history"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerName\": \"harsh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/player/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"player",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get player stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/player/demo/stats",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"player",
+						"demo",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leaderboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/leaderboard",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"leaderboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/health",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
